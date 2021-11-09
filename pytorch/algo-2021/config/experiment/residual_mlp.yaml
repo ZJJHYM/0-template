@@ -1,0 +1,17 @@
+# @package _global_
+batch_size: 32
+model: residual_mlp
+hidden_dim: 1024
+projected_dim: 1024
+mixer_layer: 1
+dropout: 0.3
+
+modal_list:
+  - video
+  - audio
+  - text
+
+trainer:
+  gpus:
+    - 1
+  val_check_interval: 50

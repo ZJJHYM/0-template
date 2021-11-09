@@ -1,0 +1,19 @@
+# @package _global_
+batch_size: 32
+model: transformer_pooling
+hidden_dim: 1024
+projected_dim: 1024
+transformer_layer: 3
+transformer_head: 8
+dropout: 0.3
+
+modal_list:
+  - video
+  - audio
+  - text
+
+trainer:
+  gpus:
+    - 0
+  val_check_interval: 50
+  gradient_clip_val: 1.0

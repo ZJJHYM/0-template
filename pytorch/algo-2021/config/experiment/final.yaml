@@ -1,0 +1,35 @@
+# @package _global_
+batch_size: 32
+model: final
+attention_head: 8
+co_attention_layer: 6
+self_attention_layer: 6
+pooling_head: 8
+pooling_dim: 512
+attention_dropout: 0.5
+classifier_dropout: 0.5
+
+feature_attention_head: 8
+feature_attention_layer: 1
+
+hidden_dim: 2048
+attention_hidden_dim: 1024
+
+alpha: 0.5
+
+modal_list:
+  - video
+  - audio
+  - text
+
+
+
+trainer:
+  gpus:
+    - 0
+  val_check_interval: 50
+
+# text_padding_size: 300
+
+# dataset:
+#   text_feature: text_feature

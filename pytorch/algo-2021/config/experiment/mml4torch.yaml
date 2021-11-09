@@ -1,0 +1,25 @@
+# @package _global_
+batch_size: 32
+model: mml4torch
+d_model: 768
+d_hidden: 2048
+dropout: 0.3
+transformer_layer: 3
+alpha: 0.5
+
+modal_list:
+  - video
+  - audio
+  - ocr
+  - asr
+
+
+trainer:
+  gpus:
+    - 0
+  val_check_interval: 50
+
+# text_padding_size: 300
+
+# dataset:
+#   text_feature: text_feature

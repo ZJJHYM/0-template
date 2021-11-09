@@ -1,0 +1,13 @@
+# @package _global_
+batch_size: 4
+model: tvn_attn_pooling
+attention_head: 8
+co_attention_layer: 1
+self_attention_layer: 1
+pooling_head: 8
+pooling_dim: 512
+
+trainer:
+  val_check_interval: 500
+  gpus: 2
+  accumulate_grad_batches: 4

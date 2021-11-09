@@ -1,0 +1,19 @@
+# @package _global_
+batch_size: 32
+model: mlp_multi_classifier
+hidden_dim: 1024
+projected_dim: 1024
+mixer_layer: 3
+dropout: 0.3
+
+modal_list:
+  - video
+  - audio
+  - text
+
+trainer:
+  gpus:
+    - 0
+  val_check_interval: 50
+  gradient_clip_val: 1.0
+  

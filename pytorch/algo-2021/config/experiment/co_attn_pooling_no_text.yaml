@@ -1,0 +1,14 @@
+# @package _global_
+batch_size: 32
+model: co_attn_pooling
+attention_head: 8
+co_attention_layer: 1
+self_attention_layer: 1
+pooling_head: 8
+pooling_dim: 512
+modal_list:
+  - video
+  - audio
+
+trainer:
+  val_check_interval: 50

@@ -1,0 +1,9 @@
+defaults:
+  - base
+  - logger: comet
+  - job_logging: null
+  - hydra_logging: null
+
+train: true
+test: false
+report: false

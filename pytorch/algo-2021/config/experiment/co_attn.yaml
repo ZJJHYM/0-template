@@ -1,0 +1,34 @@
+# @package _global_
+batch_size: 32
+model: co_attn
+attention_head: 8
+co_attention_layer: 3
+self_attention_layer: 3
+mixer_layer: 3
+pooling_layer: 3
+pooling_head: 8
+pooling_dim: 512
+attention_dropout: 0.1
+classifier_dropout: 0.3
+
+label_graph: ./dataset/label_graph.bin
+
+hidden_dim: 2048
+
+modal_list:
+  - video
+  - audio
+  - text
+
+lr_scheduler: null
+
+
+trainer:
+  gpus:
+    - 0
+  val_check_interval: 1.0
+
+# text_padding_size: 300
+
+# dataset:
+#   text_feature: text_feature

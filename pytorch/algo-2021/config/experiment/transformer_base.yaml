@@ -1,0 +1,30 @@
+# @package _global_
+batch_size: 32
+learning_rate: 0.0001
+model: transformer_base
+d_model: 768
+hidden_dim: 2048
+transformer_layer: 3
+transformer_head: 8
+
+modal_dropout: 0.5
+dropout: 0.3
+
+alpha: 0.5
+
+
+modal_list:
+  - video
+#   - i3d
+  - ocr
+  - asr
+#   - text
+  - audio
+
+trainer:
+  gpus:
+    - 0
+  val_check_interval: 50
+  gradient_clip_val: 1.0
+  
+#   auto_lr_find: false

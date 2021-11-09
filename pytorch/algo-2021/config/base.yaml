@@ -1,0 +1,57 @@
+batch_size: 16
+learning_rate: 0.0001
+weight_decay: 0.00000001
+
+# the padding_sizes are determined by EDA
+video_padding_size: 70
+audio_padding_size: 70
+text_padding_size: 200
+
+n_frames_one_group: 16
+
+bert_model_name: bert-base-chinese
+
+# loss: multilabel_cross_entropy
+loss: cross_entropy
+# loss: asymmetric_loss
+# loss: focal_loss
+
+lr_scheduler:
+  mode: max
+  factor: 0.5
+  patience: 1
+  min_lr: 0.0000001
+
+num_classes: 82
+video_dim: 1024
+audio_dim: 128
+text_dim: 768
+
+early_stopping_patience: 10
+
+# pytorch lightning trainer configuration reference:
+# https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.trainer.trainer.html#module-pytorch_lightning.trainer.trainer
+trainer: 
+  default_root_dir: ./log # changed
+  gradient_clip_val: 1.0 # changed
+  gradient_clip_algorithm: norm
+  gpus: 1
+  check_val_every_n_epoch: 1
+  max_epochs: null
+  min_epochs: null
+  max_steps: 100000 # changed
+  min_steps: null
+  limit_train_batches: 1.0
+  limit_val_batches: 1.0
+  limit_test_batches: 1.0
+  limit_predict_batches: 1.0
+#   val_check_interval: 50 # How often to check the validation set. Use float to check within a training epoch, use int to check every n steps (batches).
+  flush_logs_every_n_steps: 100
+  log_every_n_steps: 1
+  precision: 32
+  weights_summary: top
+  resume_from_checkpoint: null
+  reload_dataloaders_every_epoch: False
+  auto_lr_find: True
+  auto_scale_batch_size: null # There seems to be some bugs with this, disable it and specify batch size manually
+  move_metrics_to_cpu: True

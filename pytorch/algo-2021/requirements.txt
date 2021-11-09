@@ -1,0 +1,8 @@
+seaborn==0.11.1
+tensorboard==2.5.0
+transformers==4.6.0
+pytorch_lightning==1.3.5
+comet_ml==3.12.0
+scikit-learn
+hydra-core
+tvn==1.0.0
